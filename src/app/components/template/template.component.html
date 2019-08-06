@@ -1,0 +1,62 @@
+<div #myBox>
+    viewChild
+</div>
+<!-- 获取子组件实例  dom操作 -->
+<app-viewchild #appviewchild></app-viewchild>
+<p id="box">{{title}} ++++</p>
+<p>{{msg}}</p>
+<p [innerHTML]='htmlCon'></p>
+<p [title]="msg">绑定属性</p>
+<p *ngIf="arr.length < 3">ngif</p>
+<ul>
+    <li *ngFor="let item of arr;let key=index" >{{key}}--{{item}}</li>
+</ul>
+<img [src]="picUrl" alt="">
+
+<span [ngSwitch]="order">
+<p *ngSwitchCase="1">
+    order =1
+</p>
+<p *ngSwitchCase="2">
+    order =2
+</p>
+<p *ngSwitchDefault>
+    其他
+</p>
+</span>
+
+<div [ngClass]="{'red': true}">ngclass</div>
+<div [ngStyle]="{'color': 'blue'}">ngStyle</div>
+
+<button (click)="clickFn()">点击事件</button>
+
+<input type="text" (keyup)="keyupFn($event)">
+
+<!-- 管道 http://bbs.itying.com/topic/5bf519657e9f5911d41f2a34-->
+<p>{{today | date:'yyyy-MM-dd HH:mm:ss' }}</p>
+<!-- //转换成大写 -->
+<p>{{ "aaaFF" | uppercase}}</p>
+<!-- //转换成小写 -->
+<p>{{"AAAbb" | lowercase}}</p>
+
+<!-- 保留2位小数 -->
+<p>{{"1.3333" | number:'1.0-2'}}</p> 
+<!-- JavaScript 对象序列化 -->
+<p>{{ { name: 'semlinker' } | json }}</p>                        
+<!-- slice -->
+<p>{{ 'semlinker' | slice:0:3 }}</p>
+<!-- 管道链 取字符串3位并且转化为大写 -->
+<p>{{ 'semlinker' | slice:0:3 | uppercase}}</p>
+<!-- 自定义pipe -->
+<p>{{name | welcome}}</p>
+
+<!-- 数据双向绑定 import { FormsModule } from '@angular/forms';-->
+<p>{{content}}</p>
+<input type="text" [(ngModel)]="content">
+
+
+
+
+
+
+

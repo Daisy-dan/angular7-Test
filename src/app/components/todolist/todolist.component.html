@@ -1,0 +1,29 @@
+<p>todolist!</p>
+<div>
+    <p class="inputVal">{{todo}}</p>
+    <input type="text" placeholder="添加todo" [(ngModel)]="todo">&nbsp;&nbsp;
+    <button (click)="addTodo()">add</button>
+</div>
+<div>
+    <p>正在进行</p>
+    <ul>
+        <p *ngFor="let item of arr;let key = index">
+            <li  *ngIf="item.checked == false">
+                <input type="checkbox" [(ngModel)]="item.checked">{{item.title}}
+                <span class="delete" (click)="deleteTodo(key)">删除</span>
+            </li>
+        </p>
+    </ul>
+</div>
+<div>
+    <p>已经完成</p>
+    <ul>
+        <p *ngFor="let item of arr;let key = index">
+            <li  *ngIf="item.checked == true">
+                <input type="checkbox" [(ngModel)]="item.checked">{{item.title}}
+            </li>
+        </p>
+    </ul>
+</div>
+
+<div>{{arr | json}}</div>

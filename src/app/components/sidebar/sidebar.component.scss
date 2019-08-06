@@ -1,0 +1,15 @@
+.aside{
+    width: 100px;
+    height: 100%;
+    background: #000000;
+    color: #ffffff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(100%,0);
+    transition: all 1s;
+}
+button{
+    background: blue;
+    color: #ffffff;
+}

@@ -20,16 +20,24 @@ Angular:
 ...
 
 
-# Angular 创建项目
-ng new angulardemo
+## Angular 创建项目
+ng new angulardemo     
 
-# 运行项目
+--skip-install 阻止自动安装 ng 包，只创建 ng 目录
+
+## 运行项目
 cd angulardemo
 ng serve --open
 
-# 工具安装angular插件
+## 工具安装angular插件
+Angular 8 Snippets - TypeScript, Html, Angular Material, ngRx, RxJS & Flex Layout
 
-# 创建组件
+Angular Language Service
+
+
+## 创建组件
 ng g component components/news
+ng g service services/storage
+ng g pipe pipe/welcome  --自定义管道
 
 
