@@ -2,6 +2,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 //angular 核心模块
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,8 +16,14 @@ import { TodolistComponent } from './components/todolist/todolist.component';
 
 //引入配置服务
 import { StorageService } from './services/storage.service';
+import { RequestService } from './services/request.service';
 import { ViewchildComponent } from './components/viewchild/viewchild.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component'
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { FatherComponent } from './components/father/father.component';
+import { SonComponent } from './components/son/son.component';
+import { LifecycleComponent } from './components/lifecycle/lifecycle.component';
+import { RxjsComponent } from './components/rxjs/rxjs.component';
+import { HttpComponent } from './components/http/http.component'
 
 //装饰器，接受一个元数据对象，告诉angular如何编译和启动应用
 @NgModule({
@@ -28,15 +35,21 @@ import { SidebarComponent } from './components/sidebar/sidebar.component'
     TodolistComponent,
     ViewchildComponent,
     SidebarComponent,
+    FatherComponent,
+    SonComponent,
+    LifecycleComponent,
+    RxjsComponent,
+    HttpComponent,
   ],
   //配置当前模块运行依赖的其他模块
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   //配置项目所需要的其他模块
-  providers: [StorageService],
+  providers: [StorageService,RequestService],
   //指定应用的主视图（称为根组件）
   bootstrap: [AppComponent]
 })

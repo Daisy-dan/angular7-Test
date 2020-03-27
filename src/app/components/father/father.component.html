@@ -1,0 +1,13 @@
+<div class="father">
+    <p>父子组件之间通讯</p>
+    <p>父组件</p>
+
+    <button (click)="getRun()">执行子组件的run2方法</button>
+    <!-- <button (click)="getOutputRun()">获取子组件广播的数据</button> -->
+    <!-- ViewChild （#son）  子组件传属性，方法，整个实例传给父组件-->
+
+    <!-- 父组件传属性，方法，整个实例传给子组件 -->
+    <app-son #son [fatherString]='fatherString' [run]='run' [father]='this' (outputSon)="getOutputRun($event)"></app-son>
+</div>
+
+
