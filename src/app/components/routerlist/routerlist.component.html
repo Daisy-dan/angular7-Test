@@ -1,0 +1,28 @@
+<p>routerlist works!</p>
+<h1>get 传值</h1>
+<ul>
+    <li *ngFor="let item of list;let k=index">
+        <a [routerLink]="[ '/listdetails' ]" [queryParams]="{aid:k}">{{k}}--{{item}}</a>
+    </li>
+</ul>
+
+<h1>动态路由</h1>
+<ul>
+    <li *ngFor="let item of list2;let k=index">
+        <a [routerLink]="[ '/details/', k]" >{{k}}--{{item}}</a>
+    </li>
+</ul>
+
+<h1>js跳转路由</h1>
+<button (click)="expression()">js跳转路由</button>
+
+<h1>路由get传值，js跳转</h1>
+<button (click)="expression2()">路由get传值，js跳转</button>
+
+<h1>父子传值</h1>
+<a [routerLink]="[ '/list/sonpage', 4]" routerLinkActive="active">父子传值</a>
+
+<router-outlet></router-outlet>
+
+
+
