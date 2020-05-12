@@ -15,6 +15,10 @@ import { TemplateComponent } from './components/template/template.component';
 import { RouterlistComponent } from './components/routerlist/routerlist.component';
 import { RouterlistdetailsComponent } from './components/routerlistdetails/routerlistdetails.component';
 
+import { PlistComponent } from './components/project/plist/plist.component';
+import { PdetailsComponent } from './components/project/pdetails/pdetails.component';
+import { PaddlistComponent } from './components/project/paddlist/paddlist.component';
+
 const routes: Routes = [
   
   {
@@ -71,6 +75,15 @@ const routes: Routes = [
   },
   {
     path: 'details',component: RouterlistdetailsComponent
+  },
+  {
+    path: 'plist',component: PlistComponent
+  },
+  {
+    path: 'pdetails/:id',component: PdetailsComponent
+  },
+  {
+    path: 'padd',component: PaddlistComponent
   },
   {
     //匹配不到路由，默认跳转home

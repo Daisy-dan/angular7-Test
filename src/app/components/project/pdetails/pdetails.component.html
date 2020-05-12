@@ -1,0 +1,8 @@
+<p><a [routerLink]="[ '/plist' ]">返回列表页</a></p>
+<p>{{addlist.pid}}</p>
+<div>
+    <button class="cut" (click)="cut()">-</button>
+    <span class="num">{{addlist.amount}}</span>
+    <button class="plus" (click)="plus()">+</button>
+</div>
+<button class="add" (click)="add()">加入购物车</button>

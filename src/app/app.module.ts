@@ -30,6 +30,9 @@ import { RequestService } from './services/request.service';
 import { HttpserviceService } from './services/httpservice.service';
 import { RouterlistComponent } from './components/routerlist/routerlist.component';
 import { RouterlistdetailsComponent } from './components/routerlistdetails/routerlistdetails.component';
+import { PlistComponent } from './components/project/plist/plist.component';
+import { PdetailsComponent } from './components/project/pdetails/pdetails.component';
+import { PaddlistComponent } from './components/project/paddlist/paddlist.component';
 
 
 //装饰器，接受一个元数据对象，告诉angular如何编译和启动应用
@@ -50,6 +53,9 @@ import { RouterlistdetailsComponent } from './components/routerlistdetails/route
     HomeComponent,
     RouterlistComponent,
     RouterlistdetailsComponent,
+    PlistComponent,
+    PdetailsComponent,
+    PaddlistComponent,
   ],
   //配置当前模块运行依赖的其他模块
   imports: [

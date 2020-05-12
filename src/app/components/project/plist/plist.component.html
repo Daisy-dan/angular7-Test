@@ -1,0 +1,16 @@
+<div class="header">
+    <a class="hpage" [routerLink]="[ '/plist' ]">所有菜品</a>
+    <a [routerLink]="[ '/padd' ]">已点</a>
+</div>
+
+<div class="wrap">
+    <div *ngFor="let itemList of plist;let k = index">
+        <p>{{itemList.title}}</p>
+        <div class="kind" *ngFor="let item of itemList.list;let k = index" [ngClass]="{'right': (k+1)%3 == 0,'float': (k+1)%3 == 0}">
+            <img [src]="item.img_url" [alt]="item._id">
+            <b>{{item.title}}￥{{item.price}}</b>
+            <a [routerLink]="[ '/pdetails', item._id ]">查看</a>
+        </div>
+    </div>
+    
+</div>

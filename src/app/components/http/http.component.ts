@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { HttpserviceService } from './../../services/httpservice.service';
 
+import { CommonService } from './../../services/common.service'
+
 @Component({
   selector: 'app-http',
   templateUrl: './http.component.html',
@@ -10,26 +12,42 @@ import { HttpserviceService } from './../../services/httpservice.service';
 export class HttpComponent implements OnInit {
 
   public list:any[] = [];
-  constructor(public http:HttpClient,public axios:HttpserviceService) { }
+  constructor(
+    public http:HttpClient,
+    public axios:HttpserviceService,
+    public commonService:CommonService
+    ) { }
 
   ngOnInit() {
   }
 
   getData(){
-    let api = "http://a.itying.com/api/productlist";
-    this.http.get(api).subscribe((response:any)=>{
+    // let api = "http://a.itying.com/api/productlist";
+    // this.http.get(api).subscribe((response:any)=>{
+    //   console.log(response);
+    //   this.list = response.result;
+    // })
+
+    //方法二
+    this.commonService.get("api/productlist").then((response:any)=>{
       console.log(response);
       this.list = response.result;
     })
   }
   postData(){
     //headers
-    const httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
-    let api = "http://127.0.0.1:3000/dologin";
+    // const httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
+    // let api = "http://127.0.0.1:3000/dologin";
     //nodejs后台 cnpm install   node app.js
 
     const postData =  {"name":"zhangsan"};
-    this.http.post(api,postData,httpOptions).subscribe((response)=>{
+    // this.http.post(api,postData,httpOptions).subscribe((response)=>{
+    //   console.log(response);
+    // })
+
+
+    //方法二
+    this.commonService.post("dologin",postData).then((response:any)=>{
       console.log(response);
     })
   }
