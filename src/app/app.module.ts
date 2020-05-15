@@ -34,6 +34,9 @@ import { PlistComponent } from './components/project/plist/plist.component';
 import { PdetailsComponent } from './components/project/pdetails/pdetails.component';
 import { PaddlistComponent } from './components/project/paddlist/paddlist.component';
 
+//module
+import { UserModule } from './module/user/user.module';
+
 
 //装饰器，接受一个元数据对象，告诉angular如何编译和启动应用
 @NgModule({
@@ -63,7 +66,8 @@ import { PaddlistComponent } from './components/project/paddlist/paddlist.compon
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    HttpClientJsonpModule
+    HttpClientJsonpModule,
+    UserModule
     ],
   //配置项目所需要的其他模块
   providers: [StorageService,RequestService,HttpserviceService],

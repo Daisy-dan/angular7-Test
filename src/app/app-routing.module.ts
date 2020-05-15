@@ -20,7 +20,10 @@ import { PdetailsComponent } from './components/project/pdetails/pdetails.compon
 import { PaddlistComponent } from './components/project/paddlist/paddlist.component';
 
 const routes: Routes = [
-  
+  {
+    //模块懒加载
+    path: 'user',loadChildren:'./module/user/user.module#UserModule'
+  },
   {
     path: 'home',component: HomeComponent
   },
