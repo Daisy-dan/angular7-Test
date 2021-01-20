@@ -4,6 +4,8 @@
 
 node -v 查看node版本
 
+npm
+
 ## 安装 cnpm
 npm 可能安装失败建议先用 npm 安装一下 cnpm 用淘宝镜像安装
 npm install -g cnpm --registry=https://registry.npm.taobao.org
